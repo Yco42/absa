@@ -7,6 +7,7 @@ Pre-requisites:
 3. $ npm install selenium-webdriver
 4. Install Chromedriver
 5. Install Postman app
+6. Install Selenium’s language bindings for Javascript: https://www.seleniumhq.org/download/
 
 Section A: Tasks
 
