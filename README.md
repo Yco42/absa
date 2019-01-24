@@ -8,6 +8,7 @@ Pre-requisites:
 4. Install Chromedriver
 5. Install Postman app
 6. Install Selenium’s language bindings for Javascript: https://www.seleniumhq.org/download/
+7. Install Selenium IDE for Chrome: https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd?hl=en
 
 Section A: Tasks
 
@@ -17,6 +18,8 @@ I decided to use Postman's Collection functionality for this task as it's very l
 
 Method:
 1. Using POSTMAN (Collection Runner), Run the automated tests (click link in 'Section B: Resources' below)
+
+
 2. Click Export Results for a Test Result report and associated test evidence
 
 TASK2:
