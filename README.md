@@ -17,11 +17,32 @@ I decided to use Postman's Collection functionality for this task as it's very l
 
 Method:
 1. Using POSTMAN (Collection Runner), Run the automated tests (click link in 'Section B: Resources' below)
+
+![Alt text](https://github.com/Yco42/absa/blob/master/PostmanCollectionRunner.JPG?raw=true "shot1")
+
 2. Click Export Results for a Test Result report and associated test evidence
 
 TASK2:
 
+There are two solutions:
+Solution1 = NodeJS, Jscript + Webdriver
+Solution2 = Chrome Selenium IDE
 
+My first choice was to use technology that I've been getting experience with recently in the blockchain space: NodeJS with Webdriver to run the tests and enter data into the fields (Solution1). 
+
+I encountered a bit of a baffling problem and spent perhaps way too long trying to figure out why a certain test didn't execute: 
+
+(driver.findElement(webdriver.By.name('FirstName')).sendKeys('FName1');
+
+It turned out that there were bugs in the webdriver! (typical!)
+
+Bugs:
+1) SeleniumHQ/selenium#6871
+2) Workaround (requires new Selenium version to be published): SeleniumHQ/selenium-ide@925dd41
+
+The bug causes the SendKeys event to not enter any of the expected data into a field, which was a problem for this approach because the site under test uses a Form in which the User variables should be entered. The automation was failing (without error) when trying to locate and populate the FirstName. 
+
+Disappointed, I decided to switch my approach. Because I had already spent quite a while on the task, I decided to use Chrome's Selenium IDE recording tool. Although this is a less interesting solution, it is faster. I decided to still include my previous work on Solution1 for your review. 
 
 Section B: Resources
 
