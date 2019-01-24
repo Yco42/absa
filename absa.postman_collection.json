@@ -1,0 +1,113 @@
+{
+	"variables": [],
+	"info": {
+		"name": "absa",
+		"_postman_id": "42adf8b6-55df-0db9-3ff8-30e244c107af",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list breeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"//  check for 200 response ok (PASS)",
+							"pm.test(\"response ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// check that 'retriever' is in the list",
+							"pm.test(\"verify “retriever” is within the list\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"retriever\");",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dog.ceo/api/breeds/list/all",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "produce a list of sub-breeds for “retriever”",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"//  check for 200 response ok (PASS)",
+							"pm.test(\"response ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dog.ceo/api/breed/retriever/list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"method\":\"retriever\"}"
+				},
+				"description": "view subset retriever"
+			},
+			"response": []
+		},
+		{
+			"name": "produce a random image / link for the sub-breed “golden”",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"//  check for 200 response ok (PASS)",
+							"pm.test(\"response ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://dog.ceo/api/breeds/image/random",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"method\":\"retriever\"}"
+				},
+				"description": "view subset retriever"
+			},
+			"response": []
+		}
+	]
+}
